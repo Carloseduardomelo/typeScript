@@ -3,9 +3,8 @@ import Pessoa_F from "./class/Pessoa_F"
 
 
 
+const Empresa01 = new Empresa('carlos' , 1 , 1234, 17)
+Empresa01.deposito(100)
 
 
-const Empresa1: Empresa = new Empresa(' acrlos', 123456, 2 ,10)
-
-Empresa1.pegar_Empre(5000)
 

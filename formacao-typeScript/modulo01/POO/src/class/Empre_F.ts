@@ -1,7 +1,7 @@
 import Account from "./Acont"
 
 export default class Empresa extends Account{
-    quant_empre: number = 1000
+    private quant_empre: number = 1000
 
     constructor(name:string , cpf:number , id:number, age:number){
         super(name , id , cpf , age)
