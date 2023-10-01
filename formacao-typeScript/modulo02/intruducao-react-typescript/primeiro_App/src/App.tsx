@@ -1,15 +1,9 @@
-import { useState } from 'react'
-import Card from './components/card/card'
-import { StyleApp } from './styled'
-import Inputtela from './components/input/input'
+import InputCard from './components/inputCard/inputCard'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <StyleApp>
-      <Inputtela />
-    </StyleApp>
+    <InputCard />
   )
 }
 
