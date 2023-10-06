@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
+
 import {
     ChakraBaseProvider,
     Input,
@@ -11,36 +12,26 @@ import {
 
 import './style.css'
 import ButtonCompo from "../button"
-import { Login } from "../../assets/login"
 import Header from "../hearder"
-import { Api } from "../../api"
+import useGetApi from "../../hooks/useGetApi"
 
-interface IDAta{
-    email: string
-    password: string
-    name: string
-    age: number
-}
+
+
 
 const InputCard = () => {
 
     const [ email , setEmail ] = useState<string>('')
     const [ password , setPassword ] = useState<string>('')
-    const [ Data , setData ] = useState<IDAta>() 
+    const { Data } = useGetApi()
 
-    useEffect(() => {
+    function Login(_arg: { email: string; password: string }): string {
+        throw new Error("Function not implemented.")
+    }
 
-        const getApi = async () =>{
-            const data:IDAta | any = await Api
-            setData(data)
-        }
-        getApi()
-    },[Data])
-    
     return (
         <ChakraBaseProvider>
-            <Box width={'100vw'} height={'100vh'}>
-                <Box width={'100%'} height={'10%'} backgroundColor='transparent'>
+            <Box width={'100vw'} height={'100vh'} backgroundColor={'darkgrey'}>
+                <Box width={'100%'} height={'10%'}>
                     <Header />
                 </Box>
                 <Box width={'100%'} height={'90%'} display={"flex"} alignItems={"center"} justifyContent={"center"} gap={'20px'}>

@@ -8,7 +8,7 @@ export const router = createBrowserRouter([
     element: <App/>
 },
 {
-    path: '/logado',
-    element: <Logado/>
+    path: '/logado/:id',
+    element: <Logado/>,
 }
 ])

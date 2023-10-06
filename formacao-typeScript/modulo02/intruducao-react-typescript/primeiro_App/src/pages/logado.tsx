@@ -1,17 +1,18 @@
-import { Box, Center } from "@chakra-ui/react"
-import Header from "../components/hearder"
 import Cards from "../components/cards/cards"
+import useGetApi from "../hooks/useGetApi"
+import { useParams , useNavigate } from "react-router-dom"
 
 const Logado = () =>{
+    const { Data } = useGetApi()
+
+    const { id } = useParams()
+    const nave = useNavigate()
+
+    console.log(id)
+    console.log(Data?.id)
+
     return(
-        <Box w={`100vw`} h={`100vh`}>
-            <Box width={"full"} height={`10%`} backgroundColor={`blue.700`}>
-                <Header/>
-            </Box>
-            <Box width={`full`} height={`90%`} alignItems={"center"} justifyContent={"center"}>
-                <Cards name={`carlos`} descrip={`Voce estar logado`}/>
-            </Box>
-        </Box>
+        <Cards name={Data?.name} email={Data?.email} saldo={Data?.saldo} horas={Data?.horas} age={Data?.age}/>
     )
 }
 

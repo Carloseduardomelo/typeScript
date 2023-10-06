@@ -1,5 +1,6 @@
 import { Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
+import useGetApi from '../../hooks/useGetApi'
 
 interface IpropsButon {
     onClick: () => void | any
@@ -7,8 +8,10 @@ interface IpropsButon {
 }
 
 const ButtonCompo = (props: IpropsButon) => {
+
+    const { Data } = useGetApi()
     return (
-        <Link to={`/logado`} style={{width: `50%`, height: `40px`}}>
+        <Link to={`/logado/${Data?.id}`} style={{width: `50%`, height: `40px`}}>
             <Button
                 isDisabled={props.ok}
                 colorScheme='blue'
